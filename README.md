@@ -24,3 +24,7 @@
 
 - Add an edit (PUT) end-point
 - Style the application better
+- Organise the code better
+  - break it into smaller coponents
+  - move fetch requests into one file
+  - seperate routes from logic
