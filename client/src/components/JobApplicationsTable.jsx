@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const API = location.href.includes("localhost") ? "http://localhost:8080" : "https://[ProjectName].onrender.com";
+const API = location.href.includes("localhost") ? "http://localhost:8080" : "https://my-job-applications.onrender.com";
 
 export default function JobApplicationsTable() {
   const [applications, setApplications] = useState([]);
