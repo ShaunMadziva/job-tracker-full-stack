@@ -1,5 +1,11 @@
 # job-tracker-full-stack
 
+## clint:
+https://my-job-applications-view.onrender.com/
+
+## server:
+https://my-job-applications.onrender.com/job-applications
+
 ## User Stories:
 
 🐿️ As a user, I want the app to be fast and responsive so that I can browse without delays.  
