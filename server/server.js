@@ -61,6 +61,20 @@ app.post("/job-applications", async (req, res) => {
   }
 });
 
+app.delete("/job-applications/:id", async (req, res) => {
+  const { id } = req.params;
+  try {
+    const result = await db.query("DELETE FROM jobapplicationtracker WHERE id = $1 RETURNING *", [id]);
+    if (result.rowCount === 0) {
+      return res.status(404).json({ error: "Job application not found" });
+    }
+    res.json({ message: "Job application deleted", application: result.rows[0] });
+  } catch (error) {
+    console.error("Error deleting application:", error);
+    res.status(500).json({ error: "Failed to delete application" });
+  }
+});
+
 app.listen(8080, () => {
   console.log("Server running on port 8080");
 });

@@ -22,6 +22,18 @@ export default function JobApplicationsTable() {
     }
   };
 
+  // Delete job application
+  const handleDelete = async (id) => {
+    console.log("Deleting post with id:", id);
+    const response = await fetch(`${API}/job-applications/${id}`, {
+      method: "DELETE",
+    });
+    const data = await response.json();
+    console.log("Delete response:", data);
+    alert(`🚀Success! Deleted application #${id}`);
+    setApplications(applications.filter((app) => app.id !== id));
+  };
+
   return (
     <div>
       <h2>Job Applications</h2>
@@ -71,6 +83,9 @@ export default function JobApplicationsTable() {
                 <td>{outcome}</td>
                 <td>{follow_up_date}</td>
                 <td>{followed_up}</td>
+                <td>
+                  <button onClick={() => handleDelete(id)}>Delete</button>
+                </td>
               </tr>
             )
           )}
