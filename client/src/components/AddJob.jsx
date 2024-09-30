@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+const API = location.href.includes("localhost") ? "http://localhost:8080" : "https://[ProjectName].onrender.com";
+
 export default function AddJob() {
   const initialFormState = {
     job_title: "",
@@ -20,7 +22,7 @@ export default function AddJob() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:8080/job-applications", {
+      const response = await fetch(`${API}/job-applications`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
