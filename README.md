@@ -1,4 +1,4 @@
-### job-tracker-full-stack
+# job-tracker-full-stack
 
 ## User Stories:
 
