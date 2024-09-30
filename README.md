@@ -1,6 +1,6 @@
 # job-tracker-full-stack
 
-## clint:
+## client:
 https://my-job-applications-view.onrender.com/
 
 ## server:
